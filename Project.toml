@@ -1,0 +1,17 @@
+name = "StatTraits"
+uuid = "64bff920-2084-43da-a3e6-9bb72801c0c9"
+authors = ["Anthony D. Blaom <anthony.blaom@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+ScientificTypes = "321657f4-b219-11e9-178b-2701a2544e81"
+
+[compat]
+ScientificTypes = "^1"
+
+[extras]
+SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test", "SparseArrays"]
