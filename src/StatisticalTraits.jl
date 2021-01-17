@@ -1,4 +1,4 @@
-module StatTraits
+module StatisticalTraits
 
 using ScientificTypes
 

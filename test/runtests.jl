@@ -1,5 +1,5 @@
 using Test
-using StatTraits
+using StatisticalTraits
 using ScientificTypes
 import SparseArrays
 
@@ -15,11 +15,11 @@ import .Fruit
 ## HELPERS
 
 @testset "typename" begin
-    @test StatTraits.typename(Nothing) == :Nothing
-    @test StatTraits.typename(UnionAll) == :UnionAll
-    @test StatTraits.typename(Union{Char,Int}) == Symbol("Union{Char, Int64}")
+    @test StatisticalTraits.typename(Nothing) == :Nothing
+    @test StatisticalTraits.typename(UnionAll) == :UnionAll
+    @test StatisticalTraits.typename(Union{Char,Int}) == Symbol("Union{Char, Int64}")
     T = SparseArrays.sparse([1,2], [1,3], [0.5, 0.6]) |> typeof
-    @test StatTraits.typename(T) == :SparseMatrixCSC
+    @test StatisticalTraits.typename(T) == :SparseMatrixCSC
 end
 
 
@@ -66,7 +66,7 @@ const NONCONSTANT = [:docstring,
                      :hyperparameter_types]
 
 @testset "traits with constant fall-back" begin
-    for trait in setdiff(StatTraits.TRAITS, NONCONSTANT)
+    for trait in setdiff(StatisticalTraits.TRAITS, NONCONSTANT)
         ex = quote
             @test $trait(Fruit.Apple()) == $trait(Foo(1, 'x'))
         end
