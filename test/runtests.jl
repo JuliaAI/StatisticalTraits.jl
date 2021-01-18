@@ -73,3 +73,8 @@ const NONCONSTANT = [:docstring,
         Main.eval(ex)
     end
 end
+
+
+## INFO STUB
+
+@test StatisticalTraits.info(42) == NamedTuple()
