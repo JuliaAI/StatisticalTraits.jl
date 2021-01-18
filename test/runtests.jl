@@ -83,7 +83,13 @@ const NONCONSTANT = [:docstring,
 @testset "traits with constant fall-back" begin
     for trait in setdiff(StatisticalTraits.TRAITS, NONCONSTANT)
         ex = quote
-            @test $trait(Fruit.RedApple()) == $trait(Foo(1, 'x'))
+            a = $trait(Fruit.RedApple())
+            b = $trait(Foo(1, 'x'))
+            if ismissing(a)
+                @test ismissing(b)
+            else
+                @test a == b
+            end
         end
         Main.eval(ex)
     end

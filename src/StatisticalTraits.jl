@@ -1,7 +1,7 @@
 module StatisticalTraits
 
 using ScientificTypes
-
+import Base.instances
 
 ## CONSTANTS
 
@@ -26,7 +26,13 @@ const TRAITS = [
     :prediction_type,
     :hyperparameters,
     :hyperparameter_types,
-    :hyperparameter_ranges]
+    :hyperparameter_ranges,
+    :orientation,
+    :reports_each_observation,
+    :aggregation,
+    :is_feature_dependent,
+    :distribution_type
+]
 
 
 ## EXPORT
@@ -35,8 +41,22 @@ for trait in TRAITS
     eval(:(export $trait))
 end
 
+export Mean, Sum, RootMeanSquare
+
+
+## TYPES
+
+# For the possible values of the `aggregation` trait:
+abstract type AggregationMode end
+struct Sum <: AggregationMode end
+struct Mean <: AggregationMode end
+struct RootMeanSquare <: AggregationMode end
+
 
 ## HELPERS
+
+# Some helper functions are needed to construct sensible fallbacks for
+# some traits.
 
 """
 
@@ -55,7 +75,7 @@ function typename(M)
     if isdefined(M, :name)
         return M.name.name
     elseif isdefined(M, :body)
-        return _typename(M.body)
+        return typename(M.body)
     else
         return Symbol(string(M))
     end
@@ -95,7 +115,6 @@ end
 snakecase(s::Symbol) = Symbol(snakecase(string(s)))
 
 
-
 ## TRAITS
 
 # The following can return any scientific type, that is, any type
@@ -131,12 +150,16 @@ prediction_type(::Type)        = :unknown # used for measures too
 
 # Miscellaneous:
 
-is_wrapper(::Type)        = false     # or `true`
-supports_online(::Type)   = false     # or `true`
-docstring(M::Type)        = string(M) # some `String`
-is_supervised(::Type)     = false     # or `true`
-human_name(M::Type)       = snakecase(name(M), delim=' ') # `name` defined below
-
+is_wrapper(::Type)      = false     # or `true`
+supports_online(::Type) = false     # or `true`
+docstring(M::Type)      = string(M) # some `String`
+is_supervised(::Type)   = false     # or `true`
+human_name(M::Type)     = snakecase(name(M), delim=' ') # `name` defined below
+orientation(::Type)     = :loss  # or `:score`, `:other`
+aggregation(::Type)     = Mean()
+is_feature_dependent(::Type)     = false
+reports_each_observation(::Type) = false
+distribution_type(::Type)        = missing
 
 # Returns a tuple, with one entry per field of `T` (the type of some
 # statistical model, for example). Each entry is `nothing` or defines
@@ -162,7 +185,8 @@ for trait in TRAITS
     eval(ex)
 end
 
-## INFO METHOD FOR QUERYING TRAITS
+
+## INFO STUB FOR QUERYING TRAITS
 
 """
     info(X)
@@ -180,4 +204,3 @@ info(X) = info(X, Val(ScientificTypes.trait(X)))
 info(X, ::Val{:other}) = NamedTuple()
 
 end # module
-
