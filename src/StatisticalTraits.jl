@@ -21,6 +21,7 @@ const TRAITS = [
     :supports_online,
     :docstring,
     :name,
+    :human_name,
     :is_supervised,
     :prediction_type,
     :hyperparameters,
@@ -60,6 +61,40 @@ function typename(M)
     end
 end
 
+function is_uppercase(char::Char)
+    i = Int(char)
+    i > 64 && i < 91
+end
+
+"""
+    snakecase(str, del='_')
+
+Return the snake case version of the abstract string or symbol, `str`, as in
+
+    snakecase("TheLASERBeam") == "the_laser_beam"
+
+"""
+function snakecase(str::AbstractString; delim='_')
+    snake = Char[]
+    n = length(str)
+    for i in eachindex(str)
+        char = str[i]
+        if is_uppercase(char)
+            if i != 1 && i < n &&
+                !(is_uppercase(str[i + 1]) && is_uppercase(str[i - 1]))
+                push!(snake, delim)
+            end
+            push!(snake, lowercase(char))
+        else
+            push!(snake, char)
+        end
+    end
+    return join(snake)
+end
+
+snakecase(s::Symbol) = Symbol(snakecase(string(s)))
+
+
 
 ## TRAITS
 
@@ -96,10 +131,12 @@ prediction_type(::Type)        = :unknown # used for measures too
 
 # Miscellaneous:
 
-is_wrapper(::Type)             = false     # or `true`
-supports_online(::Type)        = false     # or `true`
-docstring(M::Type)             = string(M) # some `String`
-is_supervised(::Type)          = false     # or `true`
+is_wrapper(::Type)        = false     # or `true`
+supports_online(::Type)   = false     # or `true`
+docstring(M::Type)        = string(M) # some `String`
+is_supervised(::Type)     = false     # or `true`
+human_name(M::Type)       = snakecase(name(M), delim=' ') # `name` defined below
+
 
 # Returns a tuple, with one entry per field of `T` (the type of some
 # statistical model, for example). Each entry is `nothing` or defines
