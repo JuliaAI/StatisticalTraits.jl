@@ -17,6 +17,7 @@ const TRAITS = [
     :package_url,
     :is_wrapper,
     :supports_weights,
+    :supports_class_weights,
     :supports_online,
     :docstring,
     :name,
