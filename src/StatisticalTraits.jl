@@ -58,6 +58,10 @@ struct RootMeanSquare <: AggregationMode end
 # Some helper functions are needed to construct sensible fallbacks for
 # some traits.
 
+if VERSION < v"1.1"
+    fieldtypes(t) = Tuple(fieldtype(t, i) for i = 1:fieldcount(t))
+end
+
 """
 
     typename(T::Type)
