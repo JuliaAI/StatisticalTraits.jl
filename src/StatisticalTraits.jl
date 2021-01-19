@@ -190,7 +190,7 @@ for trait in TRAITS
 end
 
 
-## INFO STUB FOR QUERYING TRAITS
+## METHOD STUB FOR LISTING ALL TRAITS OF AN OBJECT
 
 """
     info(X)
@@ -201,7 +201,8 @@ traits that are meaninful for the object.
 *Note on overloading.* This method can be overloaded directly, as in
 `info(X::SomeAbstractType) = ...` or, using `info(X,
 ::Val{:some_trait}) = ...` where `:some_trait` is a key of
-`ScientificTypes.TRAIT_FUNCTION_GIVEN_NAME`.
+`ScientificTypes.TRAIT_FUNCTION_GIVEN_NAME` (such as `:is_measure`
+with value `is_measure`).
 
 """
 info(X) = info(X, Val(ScientificTypes.trait(X)))
