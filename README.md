@@ -5,8 +5,13 @@
 | [![Build status](https://github.com/alan-turing-institute/StatTraits.jl/workflows/CI/badge.svg)](https://github.com/alan-turing-institute/StatTraits.jl/actions)| [![codecov.io](http://codecov.io/github/alan-turing-institute/StatTraits.jl/coverage.svg?branch=master)](http://codecov.io/github/alan-turing-institute/StatTraits.jl?branch=master) |
 
 A light-weight package defining fall-back implementations for a
-collection of "traits" possessed by statistical objects. Here are two
-examples, which apply to both statistical models and loss functions:
+collection of traits possessed by statistical objects. Here a "trait"
+is a function with a single argument that is a julia type, which might
+encode type metadata for inspection, or for use in function
+dispatch. 
+
+Here are two examples, which might be applies to both statistical
+model types and loss function types:
 
 ```julia
 target_scitype(::Type) = Unknown
@@ -17,7 +22,7 @@ Here `Unknown` is a type defined in the light-weight package
 [`ScientificTypes.jl`](https://github.com/alan-turing-institute/ScientificTypes.jl),
 the only dependency of StatsTraits.jl.
 
-Refer to [source code](src/StatTraits.jl) for a complete list.
+Refer to [source code](src/StatisticalTraits.jl) for a complete list.
 
 The traits defined here are overloaded by assorted model types and
 measure types in the
