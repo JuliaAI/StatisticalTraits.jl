@@ -8,6 +8,7 @@ ScientificTypes = "321657f4-b219-11e9-178b-2701a2544e81"
 
 [compat]
 ScientificTypes = "^1"
+julia = "^1"
 
 [extras]
 SparseArrays = "2f01184e-e22b-5df5-ae63-d93ebab69eaf"
