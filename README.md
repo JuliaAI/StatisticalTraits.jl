@@ -1,4 +1,4 @@
-# StatTraits.jl
+# StatisticalTraits.jl
 
 |  Linux        | Coverage |
 | :-----------: | :------: |
