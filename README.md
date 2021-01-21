@@ -2,7 +2,7 @@
 
 |  Linux        | Coverage |
 | :-----------: | :------: |
-| [![Build status](https://github.com/alan-turing-institute/StatTraits.jl/workflows/CI/badge.svg)](https://github.com/alan-turing-institute/StatTraits.jl/actions)| [![codecov.io](http://codecov.io/github/alan-turing-institute/StatTraits.jl/coverage.svg?branch=master)](http://codecov.io/github/alan-turing-institute/StatTraits.jl?branch=master) |
+| [![Build status](https://github.com/alan-turing-institute/StatisticalTraits.jl/workflows/CI/badge.svg)](https://github.com/alan-turing-institute/StatisticalTraits.jl/actions)| [![codecov.io](http://codecov.io/github/alan-turing-institute/StatisticalTraits.jl/coverage.svg?branch=master)](http://codecov.io/github/alan-turing-institute/StatisticalTraits.jl?branch=master) |
 
 A light-weight package defining fall-back implementations for a
 collection of traits possessed by statistical objects. Here a "trait"
