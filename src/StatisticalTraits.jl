@@ -150,7 +150,7 @@ supports_class_weights(::Type) = false
 # Possible values of the following are `:deterministic`, `:probabilistic`,
 # `:interval`, or `:unknown`:
 
-prediction_type(::Type)        = :unknown # used for measures too
+prediction_type(::Type)        = :unknown 
 
 # Miscellaneous:
 

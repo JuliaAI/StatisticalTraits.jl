@@ -19,7 +19,7 @@ prediction_type(::Type) = :unknown # also :probablistic, :deterministic, :interv
 ```
 
 Here `Unknown` is a type defined in the light-weight package
-[`ScientificTypes.jl`](https://github.com/alan-turing-institute/ScientificTypes.jl),
+[ScientificTypes.jl](https://github.com/alan-turing-institute/ScientificTypes.jl),
 the only dependency of StatsTraits.jl.
 
 Refer to [source code](src/StatisticalTraits.jl) for a complete list.
