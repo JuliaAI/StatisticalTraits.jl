@@ -10,7 +10,7 @@ is a function with a single argument that is a julia type, which might
 encode type metadata for inspection, or for use in function
 dispatch. 
 
-Here are two examples, which might be applies to both statistical
+Here are two examples, which might apply to both statistical
 model types and loss function types:
 
 ```julia
