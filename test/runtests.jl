@@ -83,7 +83,8 @@ const NONCONSTANT = [:docstring,
                      :name,
                      :human_name,
                      :hyperparameters,
-                     :hyperparameter_types]
+                     :hyperparameter_types,
+                     :iteration_parameter]
 
 @testset "traits with constant fall-back" begin
     for trait in setdiff(StatisticalTraits.TRAITS, NONCONSTANT)
