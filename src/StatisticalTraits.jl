@@ -32,7 +32,8 @@ const TRAITS = [
     :aggregation,
     :is_feature_dependent,
     :distribution_type,
-    :iteration_parameter
+    :iteration_parameter,
+    :supports_training_losses
 ]
 
 
@@ -166,6 +167,7 @@ is_feature_dependent(::Type)     = false
 reports_each_observation(::Type) = false
 distribution_type(::Type)        = missing
 iteration_parameter(::Type)      = nothing
+supports_training_losses(::Type) = false
 
 # Returns a tuple, with one entry per field of `T` (the type of some
 # statistical model, for example). Each entry is `nothing` or defines
