@@ -33,7 +33,8 @@ const TRAITS = [
     :is_feature_dependent,
     :distribution_type,
     :iteration_parameter,
-    :supports_training_losses
+    :supports_training_losses,
+    :deepproperties
 ]
 
 
@@ -168,6 +169,7 @@ reports_each_observation(::Type) = false
 distribution_type(::Type)        = missing
 iteration_parameter(::Type)      = nothing
 supports_training_losses(::Type) = false
+deepproperties(::Type) = ()
 
 # Returns a tuple, with one entry per field of `T` (the type of some
 # statistical model, for example). Each entry is `nothing` or defines
