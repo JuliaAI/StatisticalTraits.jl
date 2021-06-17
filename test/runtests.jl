@@ -1,6 +1,6 @@
 using Test
 using StatisticalTraits
-using ScientificTypes
+using ScientificTypesBase
 import SparseArrays
 
 module Fruit
