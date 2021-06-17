@@ -1,6 +1,6 @@
 module StatisticalTraits
 
-using ScientificTypes
+using ScientificTypesBase
 import Base.instances
 
 ## CONSTANTS
@@ -125,7 +125,7 @@ snakecase(s::Symbol) = Symbol(snakecase(string(s)))
 ## TRAITS
 
 # The following can return any scientific type, that is, any type
-# defined in the package ScientificTypes.jl, and any ordinary type
+# defined in the package ScientificTypesBase.jl, and any ordinary type
 # that functions as a scientific type (eg, `Missing`). Here "target"
 # is a synonym for "labels", as in supervised learning; "input" is a
 # synonym for "features":
@@ -207,11 +207,11 @@ traits that are meaninful for the object.
 *Note on overloading.* This method can be overloaded directly, as in
 `info(X::SomeAbstractType) = ...` or, using `info(X,
 ::Val{:some_trait}) = ...` where `:some_trait` is a key of
-`ScientificTypes.TRAIT_FUNCTION_GIVEN_NAME` (such as `:is_measure`
+`ScientificTypesBase.TRAIT_FUNCTION_GIVEN_NAME` (such as `:is_measure`
 with value `is_measure`).
 
 """
-info(X) = info(X, Val(ScientificTypes.trait(X)))
+info(X) = info(X, Val(ScientificTypesBase.trait(X)))
 info(X, ::Val{:other}) = NamedTuple()
 
 end # module
