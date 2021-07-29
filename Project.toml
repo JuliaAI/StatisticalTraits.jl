@@ -7,7 +7,7 @@ version = "2.0.0"
 ScientificTypesBase = "30f210dd-8aff-4c5f-94ba-8e64358c1161"
 
 [compat]
-ScientificTypesBase = "^1"
+ScientificTypesBase = "^1, 2"
 julia = "^1"
 
 [extras]
