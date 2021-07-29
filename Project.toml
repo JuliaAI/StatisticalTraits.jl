@@ -1,13 +1,13 @@
 name = "StatisticalTraits"
 uuid = "64bff920-2084-43da-a3e6-9bb72801c0c9"
 authors = ["Anthony D. Blaom <anthony.blaom@gmail.com>"]
-version = "2.0.0"
+version = "2.0.1"
 
 [deps]
 ScientificTypesBase = "30f210dd-8aff-4c5f-94ba-8e64358c1161"
 
 [compat]
-ScientificTypesBase = "^1"
+ScientificTypesBase = "^1, 2"
 julia = "^1"
 
 [extras]
