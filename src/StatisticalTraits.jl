@@ -9,7 +9,7 @@ const TRAITS = [
     :input_scitype,
     :output_scitype,
     :target_scitype,
-    :training_scitype, #
+    :fit_data_scitype, #
     :predict_scitype,  #
     :transform_scitype, #
     :inverse_transform_scitype, #
@@ -138,7 +138,7 @@ snakecase(s::Symbol) = Symbol(snakecase(string(s)))
 input_scitype(::Type)          = Unknown
 output_scitype(::Type)         = Unknown
 target_scitype(::Type)         = Unknown
-training_scitype(::Type)       = Unknown
+fit_data_scitype(::Type)       = Unknown
 predict_scitype(::Type)        = Unknown
 transform_scitype(::Type)      = Unknown
 inverse_transform_scitype(::Type)  = Unknown
