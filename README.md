@@ -2,7 +2,7 @@
 
 |  Linux        | Coverage |
 | :-----------: | :------: |
-| [![Build status](https://github.com/alan-turing-institute/StatisticalTraits.jl/workflows/CI/badge.svg)](https://github.com/alan-turing-institute/StatisticalTraits.jl/actions)| [![codecov](https://codecov.io/gh/alan-turing-institute/StatisticalTraits.jl/branch/master/graph/badge.svg?token=rh6HnyIKc1)](https://codecov.io/gh/alan-turing-institute/StatisticalTraits.jl) |
+| [![Build status](https://github.com/JuliaAI/StatisticalTraits.jl/workflows/CI/badge.svg)](https://github.com/JuliaAI/StatisticalTraits.jl/actions)| [![codecov](https://codecov.io/gh/JuliaAI/StatisticalTraits.jl/branch/master/graph/badge.svg?token=rh6HnyIKc1)](https://codecov.io/gh/JuliaAI/StatisticalTraits.jl) |
 
 A light-weight package defining fall-back implementations for a
 collection of traits possessed by statistical objects. Here a "trait"
@@ -19,7 +19,7 @@ prediction_type(::Type) = :unknown # also :probablistic, :deterministic, :interv
 ```
 
 Here `Unknown` is a type defined in the light-weight package
-[ScientificTypes.jl](https://github.com/alan-turing-institute/ScientificTypes.jl),
+[ScientificTypes.jl](https://github.com/JuliaAI/ScientificTypes.jl),
 the only dependency of StatsTraits.jl.
 
 Refer to [source code](src/StatisticalTraits.jl) for a complete list.
@@ -32,7 +32,7 @@ this small package might be of independent interest.
 
 A planned StatisticalMeasures.jl package, to contain measures
 currently in
-[MLJBase.jl](https://github.com/alan-turing-institute/MLJBase.jl),
+[MLJBase.jl](https://github.com/JuliaAI/MLJBase.jl),
 will have this package as a dependency, allowing it to be independent
 of the MLJ packages.
 	

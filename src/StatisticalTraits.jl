@@ -9,6 +9,10 @@ const TRAITS = [
     :input_scitype,
     :output_scitype,
     :target_scitype,
+    :fit_data_scitype, #
+    :predict_scitype,  #
+    :transform_scitype, #
+    :inverse_transform_scitype, #
     :is_pure_julia,
     :package_name,
     :package_license,
@@ -24,6 +28,7 @@ const TRAITS = [
     :human_name,
     :is_supervised,
     :prediction_type,
+    :abstract_type, #
     :hyperparameters,
     :hyperparameter_types,
     :hyperparameter_ranges,
@@ -133,6 +138,10 @@ snakecase(s::Symbol) = Symbol(snakecase(string(s)))
 input_scitype(::Type)          = Unknown
 output_scitype(::Type)         = Unknown
 target_scitype(::Type)         = Unknown
+fit_data_scitype(::Type)       = Unknown
+predict_scitype(::Type)        = Unknown
+transform_scitype(::Type)      = Unknown
+inverse_transform_scitype(::Type)  = Unknown
 
 # The following refer to properties of the package defining a type,
 # for use in, say, a registry of machine learning models. All but the
@@ -157,6 +166,7 @@ prediction_type(::Type)        = :unknown
 
 # Miscellaneous:
 
+abstract_type(::Type)   = Any
 is_wrapper(::Type)      = false     # or `true`
 supports_online(::Type) = false     # or `true`
 docstring(M::Type)      = string(M) # some `String`
