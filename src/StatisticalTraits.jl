@@ -211,17 +211,12 @@ end
 """
     info(X)
 
-Return a named-tuple of trait values for `X`, keyed on a list of
+Return a named-tuple of trait values for `X`, keyed on the names of
 traits that are meaninful for the object.
 
 *Note on overloading.* This method can be overloaded directly, as in
-`info(X::SomeAbstractType) = ...` or, using `info(X,
-::Val{:some_trait}) = ...` where `:some_trait` is a key of
-`ScientificTypesBase.TRAIT_FUNCTION_GIVEN_NAME` (such as `:is_measure`
-with value `is_measure`).
-
+`info(X::SomeAbstractType) = ...`.
 """
-info(X) = info(X, Val(ScientificTypesBase.trait(X)))
-info(X, ::Val{:other}) = NamedTuple()
+function info end
 
-end # module
+end #module
