@@ -34,7 +34,7 @@ const TRAITS = [
     :hyperparameter_ranges,
     :orientation,
     :reports_each_observation,
-    :reports_intrinsic_importances,
+    :reports_feature_importances,
     :aggregation,
     :is_feature_dependent,
     :distribution_type,
@@ -177,7 +177,7 @@ orientation(::Type)     = :loss  # or `:score`, `:other`
 aggregation(::Type)     = Mean()
 is_feature_dependent(::Type)     = false
 reports_each_observation(::Type) = false
-reports_intrinsic_importances(::Type) = false
+reports_feature_importances(::Type) = false
 distribution_type(::Type)        = missing
 iteration_parameter(::Type)      = nothing
 supports_training_losses(::Type) = false
