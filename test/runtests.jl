@@ -46,6 +46,7 @@ end
 @testset "docstring" begin
     @test docstring(Foo(1,'x')) == "Foo"
     @test docstring(Fruit.RedApple(4)) == "Main.Fruit.RedApple{Int64}"
+    @test docstring(sin) == Base.Docs.doc(sin) |> string
 end
 
 @testset "hyperparameter_ranges" begin
