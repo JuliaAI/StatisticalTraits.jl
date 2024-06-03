@@ -173,6 +173,7 @@ abstract_type(::Type)   = Any
 is_wrapper(::Type)      = false     # or `true`
 supports_online(::Type) = false     # or `true`
 docstring(M::Type)      = string(M) # some `String`
+docstring(Contructor::Function) = Base.Docs.doc(Constructor) |> string
 is_supervised(::Type)   = false     # or `true`
 human_name(M::Type)     = snakecase(name(M), delim=' ') # `name` defined below
 orientation(::Type)     = :loss  # or `:score`, `:other`
