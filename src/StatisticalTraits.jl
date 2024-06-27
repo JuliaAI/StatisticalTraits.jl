@@ -9,10 +9,11 @@ const TRAITS = [
     :input_scitype,
     :output_scitype,
     :target_scitype,
-    :fit_data_scitype, #
-    :predict_scitype,  #
-    :transform_scitype, #
-    :inverse_transform_scitype, #
+    :fit_data_scitype,
+    :predict_scitype,
+    :transform_scitype,
+    :inverse_transform_scitype,
+    :target_in_fit,
     :is_pure_julia,
     :package_name,
     :package_license,
@@ -145,6 +146,7 @@ fit_data_scitype(::Type)       = Unknown
 predict_scitype(::Type)        = Unknown
 transform_scitype(::Type)      = Unknown
 inverse_transform_scitype(::Type)  = Unknown
+target_in_fit(::Type) = false
 
 # The following refer to properties of the package defining a type,
 # for use in, say, a registry of machine learning models. All but the

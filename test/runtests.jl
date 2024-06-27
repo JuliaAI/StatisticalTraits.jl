@@ -5,7 +5,7 @@ import SparseArrays
 
 module Fruit
 
-struct RedApple{T} 
+struct RedApple{T}
     x::T
 end
 
