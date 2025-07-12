@@ -2,6 +2,7 @@ using Test
 using StatisticalTraits
 using ScientificTypesBase
 import SparseArrays
+using REPL
 
 module Fruit
 
