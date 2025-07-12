@@ -27,6 +27,7 @@ const TRAITS = [
     :docstring,
     :name,
     :human_name,
+    :tags,
     :is_supervised,
     :prediction_type,
     :abstract_type, #
@@ -178,6 +179,7 @@ docstring(M::Type)      = string(M) # some `String`
 docstring(Constructor::Function) = Base.Docs.doc(Constructor) |> string
 is_supervised(::Type)   = false     # or `true`
 human_name(M::Type)     = snakecase(name(M), delim=' ') # `name` defined below
+tags(::Type)            = String[]
 orientation(::Type)     = :loss  # or `:score`, `:other`
 aggregation(::Type)     = Mean()
 is_feature_dependent(::Type)     = false
