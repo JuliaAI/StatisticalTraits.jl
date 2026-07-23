@@ -2,7 +2,7 @@
 
 |  Linux        | Coverage |
 | :-----------: | :------: |
-| [![Build status](https://github.com/JuliaAI/StatisticalTraits.jl/workflows/CI/badge.svg)](https://github.com/JuliaAI/StatisticalTraits.jl/actions)| [![codecov](https://codecov.io/gh/JuliaAI/StatisticalTraits.jl/branch/master/graph/badge.svg?token=rh6HnyIKc1)](https://codecov.io/gh/JuliaAI/StatisticalTraits.jl) |
+| [![Build status](https://github.com/JuliaAI/StatisticalTraits.jl/workflows/CI/badge.svg)](https://github.com/JuliaAI/StatisticalTraits.jl/actions)| [![codecov](https://codecov.io/gh/JuliaAI/StatisticalTraits.jl/graph/badge.svg?token=rnWBkGwcMy)](https://codecov.io/gh/JuliaAI/StatisticalTraits.jl) |
 
 A light-weight package defining fall-back implementations for a
 collection of traits possessed by statistical objects. Here a "trait"
