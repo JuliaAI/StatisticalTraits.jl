@@ -89,10 +89,8 @@ returns `:Machine`. Where this does not make sense (eg, instances of
 
 """
 function typename(M)
-    if isdefined(M, :name)
-        return M.name.name
-    elseif isdefined(M, :body)
-        return typename(M.body)
+    if M isa DataType || M isa UnionAll
+        return nameof(M)
     else
         return Symbol(string(M))
     end
