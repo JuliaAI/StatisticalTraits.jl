@@ -34,10 +34,8 @@ const TRAITS = [
     :hyperparameters,
     :hyperparameter_types,
     :hyperparameter_ranges,
-    :orientation,
     :reports_each_observation,
     :reports_feature_importances,
-    :aggregation,
     :is_feature_dependent,
     :distribution_type,
     :iteration_parameter,
@@ -178,8 +176,6 @@ docstring(Constructor::Function) = Base.Docs.doc(Constructor) |> string
 is_supervised(::Type)   = false     # or `true`
 human_name(M::Type)     = snakecase(name(M), delim=' ') # `name` defined below
 tags(::Type)            = String[]
-orientation(::Type)     = :loss  # or `:score`, `:other`
-aggregation(::Type)     = Mean()
 is_feature_dependent(::Type)     = false
 reports_each_observation(::Type) = false
 reports_feature_importances(::Type) = false
